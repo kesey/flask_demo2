@@ -1,0 +1,121 @@
+        
+{% extends 'base.html' %}
+
+{% block content %}
+        <main>
+            <div id="banner">
+                <h1>Chine</h1>
+            </div>
+            <div id="container">
+                <div class="destinations">
+               
+                    <img class="photodestination" src="{{ url_for('static', filename='the-great-wall.jpg') }}" alt="description" >
+                    <h3>Chine</h3>
+                    <div class="reservebutton"><a href="{{ url_for('destinations', pays_id='2') }}">En savoir plus</a></div>
+                </div>
+              
+            
+           
+                <label for="q"> Quantité:</label>
+                <select id="qt" name="q">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
+                <button type="button"  class="add-to-cart" id="Ajouter" >Ajouter au panier</button>
+                <script>
+   
+                    let productId="Chine";
+                    let price="1000";
+
+
+                    let list =document.getElementById('qt');
+                    let qty=document.getElementById("qt").value;
+                    list.addEventListener('change', function() {
+   
+                    qty=list.options[list.selectedIndex].value;
+                        }, true);
+                    
+
+                    document.getElementById("Ajouter").onclick = function(){addToCart(productId,price,qty)}; 
+                          
+         
+                </script>
+            
+                <h2>Tarif:</h2>
+
+                <ul>
+                    <li>dès 1000€</li>
+                    <li>TTC/Personne</li>
+                    <li>en 5 jours / 4 nuits</li>
+                </ul>
+
+
+             <h2>Résumé:</h2>
+             <p class="paragraphe">En Asie, venez découvrir la Chine ! Ce vaste pays vous charmera par sa culture, sa cuisine et ses paysages variés, entre grandes métropoles et petits villages de campagne. Les hôtels Kyriad vous accueillent à Pékin ou à Shanghai,
+                à l’est du pays. Restaurant aux saveurs locales, literie de qualité et kiosque à magazines : nos hôtels ont tout bon !</p>
+
+                <h3>Include dans ce voyage:</h3>
+                    <ul>
+                        <li>Vol A/R au départ de Paris(+10 autres villes )</li>
+                        <li>Demi-pension</li>
+                        <li>Chambre</li>
+                        <li>Transfert</li>
+                    </ul>
+
+
+
+                <h3>Votre programme</h3>
+
+                <table>
+  
+        
+                    <thead>
+                       
+                        <tr>
+                            <th> Jour</th>
+                            <th> Progamme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jour 1</td>
+                            <td>France - Pékin </td>
+                        </tr>
+    
+                        <tr>
+                            <td>Jour 2</td>
+                            <td>Pékin - Xian  </td>
+                        </tr>
+    
+                        <tr>
+                            <td>Jour 3</td>
+                            <td>Xian - Wuhan - Shanghai </td>
+                        </tr>
+    
+                        <tr>
+                            <td>Jour 4</td>
+                            <td>Shanghai - Hangzhou - Xiamen  </td>
+                        </tr>
+    
+                        <tr>
+                            <td>Jour 5</td>
+                            <td>Ximen - France</td>
+                        </tr>
+                    </tbody>
+            
+                    <tfoot>
+            
+                    </tfoot>
+                  
+                   </table>
+            </div>
+
+        </main>
+{% endblock %}

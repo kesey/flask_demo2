@@ -1,8 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Ma première page</h1>
-<img src="{{ url_for('static', filename='banane_3d.gif') }}">
+<main>
+    <div id="banner">
+        <h1>Xzhao Voyage</h1>
+    </div>
+    <div id="container">
+        <h2>La destination du mois</h2>
+        <div class="destinations">
+            <img class="photodestination" src="{{ url_for('static', filename='fuji-mountain.jpg') }}" alt="description" >
+            <h3>Japon</h3>
+            <div class="reservebutton"><a href="/destinations/1">Je réserve</a></div>
+        </div>
+    <h2>Autre Destinations</h2>
+    <div class="destinations">
+        <img class="photodestination" src="{{ url_for('static', filename='quebec-city.jpg') }}" alt="description" >
+    <h3>Canada</h3>
+    <div class="reservebutton"><a href="/destinations/3">Je réserve</a></div>
+    </div>
+        <div class="destinations">
+            <img class="photodestination" src="{{ url_for('static', filename='the-great-wall.jpg') }}" alt="description" >
+            <h3>Chine</h3>
+            <div class="reservebutton"><a href="/destinations/2">Je réserve</a></div>
+        </div>
+    </div>
+</main>
 {% endblock %}
 
 

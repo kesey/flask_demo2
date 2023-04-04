@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <main>
+ 
+            <div id="banner">
+                <h1>Contact</h1>
+            </div>
+      
+            <div id="container">
+            <h2>Envie de composer le voyage de vos rêves?</h2>
+            <p>Contactez nous le formulaire ci-dessous, et nous vous répondrons dans les plus brefs délais.</p>
+
+            <form method="post" action="#">
+                <div id="form1">
+                <p>
+                    <label for="nom">Votre nom :</label>
+                    <input type="text" name="nom" id="nom" placeholder="votre nom * ">
+                </p>
+                <p>
+                    <label for="prenom">Votre prénom :</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="votre prénom * ">
+                </p>
+    
+                <p>
+                    <label for="mail">E-mail :</label>
+                    <input type="email" name="mail" id="mail" placeholder="votre email * ">
+                </p>
+    
+                <p>
+                    <label for="phone">Téléphone :</label>
+                    <input type="tel" name="phone" id="phone" placeholder="votre téléphone * ">
+                </p>
+            </div>
+            <div id="form2">
+    
+                <p>
+                    <label for="avis">Votre message :</label>
+                    
+    
+                    <textarea name="avis" id="avis" ></textarea>
+    
+                </p>
+                <p>
+                 <input type="checkbox" name="politique" id="politique"> <label for="politique">J'accepte votre politique de confidentialité des donées</label>
+                </p>
+                <p>
+                    <input type="submit" value="Envoyer" id="form_submit">
+                </p>
+                <p>
+                    <label >* Champs obligatoires</label>
+                </p>
+            </div>
+            </form>
+
+
+
+            <h2>Vous rendre à l'agence</h2>
+
+            <p>127 Av. Anatole France, <br> 94600 Choisy-le-Roi</p>
+
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.3406488636447!2d2.4151287000000004!3d48.75629070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6749283fef2b5%3A0xb733915044e56d5d!2s127%20Av.%20Anatole%20France%2C%2094600%20Choisy-le-Roi!5e0!3m2!1sfr!2sfr!4v1670929314697!5m2!1sfr!2sfr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
+
+
+       
+
+        </div>
+
+        </main>
+{% endblock %}

@@ -1,21 +1,50 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
     <head>
-        <title>Flaskr</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda+One&amp;display=swap" rel="stylesheet">
+        <script src="{{ url_for('static', filename='./script/functions.js') }}" async></script>
+        <title>Xzhao Voyages</title>
     </head>
     <body>
-        <nav>
-            <h1>Flaskr</h1>
-            <ul class="navbar">
-                <li><a href="{{ url_for('index') }}">Home page</a>
-                <li><a href="{{ url_for('about') }}">About</a>
-            </ul>
-        </nav>
+        <header>
+            <nav>
+                <div id="MainMenu">
+                    <a href="index.html"><img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo"></a>            
+                    <ul>
+                        <li id="index"><a href="{{ url_for('index') }}">Accueil</a></li>
+                        <li id="canada"><a href="{{ url_for('destinations', pays_id='3') }}">Canada</a></li>
+                        <li id="japon"><a href="{{ url_for('destinations', pays_id='1') }}">Japon</a></li>
+                        <li id="chine"><a href="{{ url_for('destinations', pays_id='2') }}">Chine</a></li>
+                        <li id="contacts"><a href="{{ url_for('contacts') }}">Contacts</a></li>
+                    </ul>            
+                </div>   
+            </nav>
+            <div class="dropdown">      
+                <div id="cart">
+                    <p><img id="panierlogo" src="{{ url_for('static', filename='panier.png') }}" alt="panier"> <span id="in-cart-items-num">0 </span>Articles</p>
+                </div>       
+                <ul id="cart-dropdown" hidden>
+                    <li id="empty-cart-msg"> <a>Votre panier est vide</a> </li>
+                    <li class="go-to-cart"> <a href="{{ url_for('panier') }}">Voir Panier</a></li>
+                </ul>
+            </div>       
+        </header> 
         <section class="content">
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
         </section>
+        <footer>
+            <p>Site construit à partir de donées tirées du site <a href="https://voyages.carrefour.fr/">Carrefour Voyage</a></p>
+            <p>2022 - Xzhao Voyages</p>
+        </footer>
+        <a href="#">
+            <div  id="gotop" >
+                <div  id="triange" >
+                </div>
+            </div>
+        </a>
     </body>
-    <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
 </html>

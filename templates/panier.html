@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <main>
+           
+            <div id="banner">
+                <h1>Panier</h1>
+            </div>
+            <div id="container">
+                <table class="table" id="PanierTB">
+                    <thead>
+                        <tr> <th>Article</th> <th>Prix</th>  <th>Quantité</th> </tr>
+                        <tbody id="cart-tablebody"></tbody>
+                    </thead>
+
+                </table>
+
+                <p>Sous total: <span class="subtotal"></span>€ </p>
+                <button id="confirm-command" class="add-to-cart"> Passer la commande</button>
+                <button id="clean" class="add-to-cart" onclick="cleanCart('carts')"> Vider mon panier</button>
+               
+                <script>
+                        
+                        for (let id in carts) {
+                           
+                           let item = carts[id];
+
+                           //alert(item.productId);
+                           //alert(item.price);
+                           //alert(item.qty);
+                           let trProduct = document.createElement('tr');
+                           let tdId= document.createElement('td');
+                           let tdPrice= document.createElement('td');
+                           let tdQty= document.createElement('td');
+
+                           let textNodes = [
+                               document.createTextNode(item.productId),
+                               document.createTextNode(item.price),
+                               document.createTextNode(item.qty),
+                           ];
+
+                           tdId.appendChild(textNodes[0]);
+                           tdPrice.appendChild(textNodes[1]);
+                           tdQty.appendChild(textNodes[2]);
+
+                           trProduct.appendChild(tdId);
+                           trProduct.appendChild(tdPrice);
+                           trProduct.appendChild(tdQty);
+                           document.getElementById("cart-tablebody").appendChild(trProduct);
+                       }
+
+                       
+
+
+
+                
+
+                </script>
+
+
+
+            </div>
+        </main>
+{% endblock %}

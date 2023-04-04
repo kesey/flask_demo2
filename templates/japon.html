@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <main>
+           
+            <div id="banner">
+                <h1>Japon</h1>
+            </div>
+            <div id="container">
+
+                <div class="destinations">
+                    <img class="photodestination" src="{{ url_for('static', filename='fuji-mountain.jpg') }}" alt="description" >
+                    <h3>Japon</h3>
+                    <div class="reservebutton"><a href="{{ url_for('destinations', pays_id='1') }}">En savoir plus</a></div>
+                </div>
+
+
+                <label for="q"> Quantité:</label>
+                <select id="qt" name="q">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
+                <button type="button"  class="add-to-cart" id="Ajouter" >Ajouter au panier</button>
+
+
+                <script>
+   
+                    let productId="Japon";
+                    let price="800";
+
+
+                    let list =document.getElementById('qt');
+                    let qty=document.getElementById("qt").value;
+                    list.addEventListener('change', function() {
+   
+                    qty=list.options[list.selectedIndex].value;
+                        }, true);
+                    
+                    //document.getElementById("Ajouter").onclick = addToCart(productId,price,qty);  
+                    //document.getElementById("Ajouter").onclick = function(){alert(qty)}; 
+                    document.getElementById("Ajouter").onclick = function(){addToCart(productId,price,qty)}; 
+                          
+         
+                </script>
+
+        <h2>Tarif:</h2>
+
+        <ul>
+            <li>dès 800€</li>
+            <li>TTC/Personne</li>
+            <li>en 5 jours / 4 nuits</li>
+        </ul>
+
+
+     <h2>Résumé:</h2>
+     <p class="paragraphe">
+        Voyager au Japon, c’est une aventure unique et dépaysante. Vous découvrirez les trésors naturels et culturels du pays.
+        Ces circuits que nous vous proposons vous permettront de découvrir toutes les facettes de l’archipel nippon. 
+        Les amateurs de nature et de randonnée seront ravis par les paysages montagneux, les bords de mer ou le mont Fuji. Les amoureux de la culture seront, eux, fascinés par les mégapoles comme Tokyo et leurs ambiances robotiques et technologiques mais aussi par leurs traditions ancestrales.
+       
+    </p>
+
+        <h3>Include dans ce voyage:</h3>
+            <ul>
+                <li>Vol A/R au départ de Paris(+10 autres villes )</li>
+                <li>Demi-pension</li>
+                <li>Chambre</li>
+                <li>Transfert</li>
+            </ul>
+
+
+
+        <h3>Votre programme</h3>
+
+    
+
+          
+            <table id="programme">
+  
+        
+                <thead>
+                   
+                    <tr>
+                        <th> Jour</th>
+                        <th> Progamme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jour 1</td>
+                        <td>France - Osaka </td>
+                    </tr>
+
+                    <tr>
+                        <td>Jour 2</td>
+                        <td>Osaka - Kobe - Himeji  </td>
+                    </tr>
+
+                    <tr>
+                        <td>Jour 3</td>
+                        <td>Himeji - Hiroshima - Miyajima </td>
+                    </tr>
+
+                    <tr>
+                        <td>Jour 4</td>
+                        <td>Miyajima - Tokyo  </td>
+                    </tr>
+
+                    <tr>
+                        <td>Jour 5</td>
+                        <td>Tokyo - France</td>
+                    </tr>
+                </tbody>
+        
+                <tfoot>
+        
+                </tfoot>
+              
+               </table>
+
+
+            </div>
+        </main>
+{% endblock %}
