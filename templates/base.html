@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} - Flaskr</title>
+        <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    </head>
+    <body>
+        <nav>
+            <h1>Flaskr</h1>
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}">Home page</a>
+                <li><a href="{{ url_for('about') }}">About</a>
+            </ul>
+        </nav>
+        <section class="content">
+        {% block content %}
+        {% endblock %}
+        </section>
+    </body>
+</html>
