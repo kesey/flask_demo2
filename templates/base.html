@@ -1,8 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>{% block title %}{% endblock %} - Flaskr</title>
-        <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
+        <title>Flaskr</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
     </head>
     <body>
@@ -18,4 +17,5 @@
         {% endblock %}
         </section>
     </body>
+    <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
 </html>
