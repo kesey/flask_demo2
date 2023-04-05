@@ -3,14 +3,15 @@
 {% block content %}
     <main>
         <div id="banner">
-            <h1>Canada</h1>
+            <h1>{{ infos_dest[1] }}</h1>
         </div>
         <div id="container">
             <div class="destinations">
                 <img class="photodestination" src="{{ url_for('static', filename='quebec-city.jpg') }}" alt="description" >
-            <h3>Canada</h3>
+            <h3>{{ infos_dest[1] }}</h3>
             <div class="reservebutton"><a href="{{ url_for('destinations', pays_id='3') }}">En savoir plus</a></div>
         </div>
+
         <label for="q"> Quantité:</label>
             <select id="qt" name="q">
                 <option value="1" selected>1</option>
@@ -45,26 +46,31 @@
             <h2>Tarif:</h2>
 
             <ul>
-                <li>dès 600€</li>
+                <li>dès {{ infos_dest[2] }} €</li>
                 <li>TTC/Personne</li>
-                <li>en 5 jours / 4 nuits</li>
+                <li>en {{ infos_dest[3] }}</li>
             </ul>
 
             <h2>Résumé:</h2>
 
-            <p class="paragraphe">
+            <!-- <p class="paragraphe">
             Réservez votre séjour ou circuit pas cher au Canada et explorez le Grand Nord à travers l’immensité des grands espaces du Canada. En choisissant nos séjours au Canada, vous découvrirez ce vaste pays à la culture et à la nature très riche. Balade en chiens de traîneau, randonnée dans des forêts s’étendant sur des hectares, des lacs à admirer par milliers, la nature occupe une place primordiale au Canada.
 
             Du blanc enneigé à perte de vue en hiver jusqu’aux fleurs colorées des flancs de montagne en été en passant par le vert des paysages du printemps, les amateurs de nature et de grands espaces seront au paradis !
             Parmis nos offres, optez pour un séjour à Montréal pour découvrir la plus grande ville du Québec ! Réservez un voyage à Toronto pour visiter cette métropole dynamique et pourquoi pas faire un détour vers les chutes du Niagara. Partez en séjour à Québec et explorez son architecture colonial sans pareil en longeant le fleuve Saint-Laurent.
             
             Découvrez nos conseils et informations pratiques pour préparer votre voyage au Canada.
+            </p> -->
+
+            <p class="paragraphe">
+                {{ infos_dest[4] }}
             </p>
 
             <h3>Include dans ce voyage:</h3>
             <ul>
-                <li>Vol A/R au départ de Paris(+10 autres villes )</li>
-                <li>Demi-pension</li>
+                <!-- <li>Vol A/R au départ de Paris(+10 autres villes )</li>
+                <li>Demi-pension</li> -->
+                <li>{{ infos_dest[5] }}</li>
                 <li>Chambre</li>
                 <li>Transfert</li>
             </ul>
@@ -79,8 +85,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Jour 1</td>
-                        <td>France - Vancouver </td>
+                        <td>{{ infos_dest[5] }}</td>
+                        <!-- <td>Jour 1</td>
+                        <td>France - Vancouver </td> -->
                     </tr>
 
                     <tr>

@@ -109,8 +109,7 @@ footer{
 
 
 #banner {
-    
-    background-image: url("../images/banner.jpg");
+    background-image: url("../banner.jpg");
     height:200px;
     background-position: center;
     text-align: center;

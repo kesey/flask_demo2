@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
-from flask import url_for
-# from models import Destination
+# from flask import url_for
+from models import Destination, Bdd_interact
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,13 +18,16 @@ def panier():
 
 @app.route('/destinations/<int:pays_id>')
 def destinations(pays_id):
+    bdd = Bdd_interact("xzhao_travel_bdd")
+    bdd.create_table("destination", {"title": "TEXT", "price": "FLOAT", "duration": "TEXT", "resume": "TEXT", "include": "TEXT", "program": "TEXT"})
+    destination = bdd.get_item(pays_id)
     match pays_id:
         case 1:
-            return render_template('Japon.html', name="japon")
+            return render_template('japon.html', infos_dest = destination)
         case 2:
-            return render_template('Chine.html', name="chine")
+            return render_template('chine.html', infos_dest = destination)
         case 3:
-            return render_template('Canada.html', name="canada")
+            return render_template('canada.html', infos_dest = destination)
         case _:
             return "error id"
 

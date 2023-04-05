@@ -4,16 +4,15 @@
         <main>
            
             <div id="banner">
-                <h1>Japon</h1>
+                <h1>{{ infos_dest[1] }}</h1>
             </div>
             <div id="container">
 
                 <div class="destinations">
                     <img class="photodestination" src="{{ url_for('static', filename='fuji-mountain.jpg') }}" alt="description" >
-                    <h3>Japon</h3>
+                    <h3>{{ infos_dest[1] }}</h3>
                     <div class="reservebutton"><a href="{{ url_for('destinations', pays_id='1') }}">En savoir plus</a></div>
                 </div>
-
 
                 <label for="q"> Quantité:</label>
                 <select id="qt" name="q">
@@ -53,24 +52,26 @@
         <h2>Tarif:</h2>
 
         <ul>
-            <li>dès 800€</li>
+            <li>dès {{ infos_dest[2] }} €</li>
             <li>TTC/Personne</li>
-            <li>en 5 jours / 4 nuits</li>
+            <li>en {{ infos_dest[3] }}</li>
         </ul>
 
 
      <h2>Résumé:</h2>
-     <p class="paragraphe">
-        Voyager au Japon, c’est une aventure unique et dépaysante. Vous découvrirez les trésors naturels et culturels du pays.
-        Ces circuits que nous vous proposons vous permettront de découvrir toutes les facettes de l’archipel nippon. 
-        Les amateurs de nature et de randonnée seront ravis par les paysages montagneux, les bords de mer ou le mont Fuji. Les amoureux de la culture seront, eux, fascinés par les mégapoles comme Tokyo et leurs ambiances robotiques et technologiques mais aussi par leurs traditions ancestrales.
-       
+     <!-- <p class="paragraphe">
+        Voyager au Japon, c’est une aventure unique et dépaysante. Vous découvrirez les trésors naturels et culturels du pays. Ces circuits que nous vous proposons vous permettront de découvrir toutes les facettes de l’archipel nippon. Les amateurs de nature et de randonnée seront ravis par les paysages montagneux, les bords de mer ou le mont Fuji. Les amoureux de la culture seront, eux, fascinés par les mégapoles comme Tokyo et leurs ambiances robotiques et technologiques mais aussi par leurs traditions ancestrales.
+    </p> -->
+
+    <p class="paragraphe">
+        {{ infos_dest[4] }}
     </p>
 
         <h3>Include dans ce voyage:</h3>
             <ul>
-                <li>Vol A/R au départ de Paris(+10 autres villes )</li>
-                <li>Demi-pension</li>
+                <li>{{ infos_dest[5] }}</li>
+                <!-- <li>Vol A/R au départ de Paris(+10 autres villes )</li>
+                <li>Demi-pension</li> -->
                 <li>Chambre</li>
                 <li>Transfert</li>
             </ul>
@@ -94,8 +95,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Jour 1</td>
-                        <td>France - Osaka </td>
+                        <!-- <td>Jour 1</td>
+                        <td>France - Osaka </td> -->
+                        <td>{{ infos_dest[6] }}</td>
                     </tr>
 
                     <tr>

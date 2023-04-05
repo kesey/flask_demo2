@@ -12,7 +12,7 @@
         <header>
             <nav>
                 <div id="MainMenu">
-                    <a href="index.html"><img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo"></a>            
+                    <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo"></a>            
                     <ul>
                         <li id="index"><a href="{{ url_for('index') }}">Accueil</a></li>
                         <li id="canada"><a href="{{ url_for('destinations', pays_id='3') }}">Canada</a></li>
